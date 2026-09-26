@@ -1,0 +1,382 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(100% - 32px, 900px);
+  margin: 0 auto;
+}
+
+/* =========================
+   Header
+========================= */
+
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  min-height: 68px;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* =========================
+   Hero
+========================= */
+
+.hero {
+  padding: 72px 0 40px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.hero-text {
+  max-width: 650px;
+  margin: 24px auto 0;
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* =========================
+   Analyzer
+========================= */
+
+.analyzer-section {
+  padding: 20px 0 80px;
+}
+
+.analyzer-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgb(15 23 42 / 6%);
+}
+
+.card-header {
+  margin-bottom: 28px;
+}
+
+.card-header h2 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+
+.card-header p {
+  margin: 0;
+  color: #64748b;
+}
+
+/* =========================
+   Form
+========================= */
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 12px 14px;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #0f172a;
+  box-shadow: 0 0 0 3px rgb(15 23 42 / 12%);
+}
+
+textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.helper-text {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.analyze-button {
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: 10px;
+  background: #0f172a;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.analyze-button:hover:not(:disabled) {
+  background: #1e293b;
+}
+
+.analyze-button:focus-visible {
+  outline: 3px solid #94a3b8;
+  outline-offset: 3px;
+}
+
+.analyze-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* =========================
+   Results
+========================= */
+
+.results-section {
+  padding: 64px 0 80px;
+}
+
+.results-header {
+  max-width: 700px;
+  margin-bottom: 32px;
+}
+
+.results-header h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.03em;
+}
+
+.results-header p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* =========================
+   Score
+========================= */
+
+.score-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 28px;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border: 8px solid #0f172a;
+  border-radius: 50%;
+}
+
+.score-number {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.score-total {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.score-card h2 {
+  margin: 0 0 10px;
+}
+
+.score-card p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+/* =========================
+   Result Cards
+========================= */
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.result-card {
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+}
+
+.result-card h2 {
+  margin: 0 0 18px;
+  font-size: 1.25rem;
+}
+
+.result-card ul,
+.result-card ol {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.result-card li {
+  margin-bottom: 12px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.result-card li:last-child {
+  margin-bottom: 0;
+}
+
+.suggestions-card {
+  margin-bottom: 24px;
+}
+
+/* =========================
+   Secondary Button
+========================= */
+
+.secondary-button {
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.secondary-button:hover {
+  background: #f8fafc;
+}
+
+.secondary-button:focus-visible {
+  outline: 3px solid #94a3b8;
+  outline-offset: 3px;
+}
+
+/* =========================
+   Accessibility
+========================= */
+
+:focus-visible {
+  outline: 3px solid #64748b;
+  outline-offset: 3px;
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 24px, 900px);
+  }
+
+  .hero {
+    padding: 52px 0 28px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .analyzer-card {
+    padding: 22px;
+  }
+
+  .results-section {
+    padding: 48px 0 64px;
+  }
+
+  .score-card {
+    grid-template-columns: 1fr;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .score {
+    width: 150px;
+    height: 150px;
+  }
+}
