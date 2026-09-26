@@ -112,12 +112,30 @@ Rules:
 
     return res.status(200).json(result);
   } catch (error) {
-    console.error("Resume analysis error:", error);
+  console.error("Resume analysis error:", error);
 
-    return res.status(500).json({
-      error:
-        "Analysis failed. Check your API key, API credits, and server logs, then try again.",
-    });
-  }
+  const apiError = error as {
+    status?: number;
+    message?: string;
+    error?: {
+      message?: string;
+      type?: string;
+    };
+  };
+
+  console.error("Anthropic error details:", {
+    status: apiError.status,
+    message: apiError.message,
+    errorType: apiError.error?.type,
+    errorMessage: apiError.error?.message,
+  });
+
+  return res.status(500).json({
+    error:
+      apiError.error?.message ||
+      apiError.message ||
+      "Analysis failed. Check the Vercel logs.",
+  });
+}
 }
 
